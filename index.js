@@ -1,10 +1,11 @@
 const express = require("express");
 const server = express();
 
-server.listen(4000, () => {
-  console.log("server listening");
-});
-
+let PORT = process.env.PORT || 4000;
 server.get("/", (req, res) => {
   res.send("Welcome!");
+});
+
+server.listen(PORT, () => {
+  console.log("server listening");
 });
